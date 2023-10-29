@@ -1,0 +1,19 @@
+# IDE
+.idea
+
+# Models
+models
+*.tar.gz
+
+# Environments
+.env
+.env.production
+.env.development
+.env.staging
+.venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+.scannerwork
+*.ipynb
