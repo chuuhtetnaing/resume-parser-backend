@@ -5,10 +5,14 @@ import fitz
 import requests
 from fitz_utils import ProcessedDoc
 
+from config import get_settings
+
+settings = get_settings()
+
 
 def get_resume_layout_analysis(pdf_data):
     payload = {"pdf": pdf_data, "score": 0.7, "scale": 2}  # default  # default
-    url = "http://0.0.0.0:8080/layout/pdf/base64"
+    url = f"{settings.LAYOUT_BACKEND}/layout/pdf/base64"
     res = requests.post(url, json=payload)
     result = res.json()
     return result
