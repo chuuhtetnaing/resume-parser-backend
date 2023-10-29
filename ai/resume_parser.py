@@ -12,12 +12,12 @@ ruler.from_disk(skill_pattern_path)
 
 address_pipe = pipeline(
     "token-classification",
-    model="DioulaD/birdi-finetuned-ner-address-v2",
+    model="./models/birdi-finetuned-ner-address-v2",
     grouped_entities=True,
 )
 education_pipe = pipeline(
     "token-classification",
-    model="Jean-Baptiste/camembert-ner-with-dates",
+    model="./models/camembert-ner-with-dates",
     grouped_entities=True,
 )
 
