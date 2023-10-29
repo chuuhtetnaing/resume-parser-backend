@@ -1,4 +1,3 @@
-import base64
 from typing import Union
 
 from fastapi import APIRouter, UploadFile
@@ -7,13 +6,6 @@ from ai.resume_parser import ResumeParser
 from helper import get_layout
 
 router = APIRouter()
-
-
-def get_pdf_data(file):
-    with open(file, "rb") as pdf:
-        pdf_bytes = pdf.read()
-        pdf_data = base64.b64encode(pdf_bytes).decode("utf-8")
-    return pdf_data
 
 
 @router.post("/file/parse")
